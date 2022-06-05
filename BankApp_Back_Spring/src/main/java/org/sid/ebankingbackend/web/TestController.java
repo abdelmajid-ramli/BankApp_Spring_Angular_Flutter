@@ -21,19 +21,12 @@ public class TestController {
 
     @GetMapping("/all")
     public String allAccess() {
-        return "Public Content.";
+        return "hiii";
     }
-
-//    @GetMapping("/test/{id}")
-//    public List<BankAccount> test1(@PathVariable(name = "id") Long customerId) {
-//        System.out.println("Hey===> " + customerId);
-//        return bankAccountService.findByCustomerId(customerId);
-//    }
 
     @GetMapping("/search/{kw}")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public List<Customer> test1(@PathVariable(name = "kw") String keyword) {
-        System.out.println("Hey===> " + keyword);
         List<Customer> customers=customerRepository.searchCustomer(keyword);
 
         return customers;

@@ -38,11 +38,13 @@ public class EbankingBackendApplication {
         System.out.println("hiii");
     }
 
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-    @Bean
+    
+    
+    
+    
+
+    
+    //@Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
@@ -52,7 +54,7 @@ public class EbankingBackendApplication {
         };
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner commandLineRunner(BankAccountService bankAccountService){
         return args -> {
            Stream.of("Hassan","Imane","Mohamed").forEach(name->{
